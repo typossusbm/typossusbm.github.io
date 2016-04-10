@@ -1,1376 +1,3104 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Typos 2.0</title>
 
-<head>
+        
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-widDowth, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        
+        <!-- Main Style -->
+        <style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+}
+a {
+  color: #e74c3c;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+a:hover {
+  color: #e76c3c;
+}
+.row {
+  padding: 80px 0px;
+}
+.btn {
+  border: none;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+.btn-common {
+  background: #3d566e;
+  color: #fff;
+}
+.btn-common:hover {
+  background: #e74c3c;
+  color: #fff;
+}
 
-    <title>TYPOS 1.0</title>
+.title {
+  text-align: center;
+  font-size: 50px;
+}
+.subtitle {
+  text-align: center;
+  font-weight: 100;
+  padding-bottom: 30px;
+  position: relative;
+  color: #bdc3c7;
+}
+.navbar {
+  margin-bottom: 0;
+}
+.navbar li {
+  color: #d1d1d1;
+}
+.navbar-default {
+  border: none;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background: none;
+  color: #fff;
+}
+.navbar-default .navbar-nav li a,
+.navbar-default .navbar-nav li a:hover {
+  color: #fff;
+}
+.navbar-default .navbar-nav > .active,
+.navbar-default .navbar-nav li:hover {
+  background: #e74c3c;
+  padding-bottom: 5px;
+  color: #fff;
+}
+.navbar-default .navbar-brand {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 100;
+}
+.navbar-default .navbar-brand:hover {
+  color: #eee;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background: #fff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background: #333;
+}
+.affix.navbar-default {
+  background: rgba(0, 0, 0, 0.8);
+}
+#hero-area {
+  background: #34495e;
+  color: #fff;
+}
+#hero-area .btn {
+  margin-right: 20px;
+}
+#hero-area img {
+  max-width: 100%;
+}
+#hero-area p {
+  padding: 50px 0;
+}
+#services h3 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #e74c3c;
+}
+/*Portfolio*/
+#portfolio {
+  background: #f1f1f1;
+}
+/*Portfolio Overlay */
+.portfolio-item {
+  position: relative;
+  margin-bottom: 15px;
+}
+.portfolio-item img {
+  width: 100%;
+}
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.portfolio-item:hover .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: block;
+}
+.portfolio-item .icons .preview {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  color: #fff;
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.portfolio-item .icons .preview i {
+  color: #e74c3c;
+}
+#clients {
+  background: #fff;
+}
+#about {
+  background: #34495e;
+  color: #fff;
+}
+#about p {
+  line-height: 30px;
+  font-size: 17px;
+}
+#contact {
+  background: #f1f1f1;
+}
+#contact ::-webkit-input-placeholder {
+  color: #ecf0f1;
+}
+#contact :-moz-placeholder {
+  color: #ecf0f1;
+}
+#contact ::-moz-placeholder {
+  color: #ecf0f1;
+}
+#contact :-ms-input-placeholder {
+  color: #ecf0f1;
+}
+#contact .social i {
+  color: #fff;
+  padding: 10px;
+  margin-right: 5px;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  background: #34495e;
+}
+#contact .social .social-links a:hover {
+  color: #fff;
+}
+#contact .social .fa-facebook:hover {
+  background: #3b5998;
+  color: #fff;
+}
+#contact .social .fa-twitter:hover {
+  background: #00CAFB;
+  color: #fff;
+}
+#contact .social .fa-google-plus:hover {
+  background: #D23A1D;
+  color: #fff;
+}
+#contact .social .fa-linkedin:hover {
+  background: #007bb6;
+  color: #fff;
+}
+#contact .social .fa-dribbble:hover {
+  background: #ea4c89;
+  color: #fff;
+}
+#contact .social .fa-github:hover {
+  background: #171515;
+  color: #fff;
+}
+#contact .contact-info {
+  margin: 40px 0;
+}
+#contact .contact-info p {
+  font-size: 20px;
+}
+#contact .contact-form .form-control {
+  box-shadow: none;
+  font-size: 17px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  border: none;
+}
 
-    <!-- Bootstrap Core CSS -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+/*Scroll Top*/
+.to-top i {
+  padding: 10px 15px;
+  margin: 10px;
+  background: transparent;
+  color: #34495e;
+  border: 2px solid #34495e;
+}
+.to-top i:hover {
+  background: #34495e;
+  color: #fff;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
 
-    <!-- Custom CSS -->
-    <style type="text/css">
-        body{overflow-x:hidden;font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}.text-muted{color:#777}.text-primary{color:#fed136}p{font-size:14px;line-height:1.75}p.large{font-size:16px}a,a:hover,a:focus,a:active,a.active{outline:0}a{color:#fed136}a:hover,a:focus,a:active,a.active{color:#fec503}h1,h2,h3,h4,h5,h6{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700}.img-centered{margin:0 auto}.bg-light-gray{background-color:#f7f7f7}.bg-darkest-gray{background-color:#222}.bg-blue{background-color: #337ab7}.bg-dark{background-color: #EEEEEE}.btn-primary{color:#fff;background-color:#fed136;border-color:#fed136;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700}.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{color:#fff;background-color:#fec503;border-color:#f6bf01}.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{background-image:none}.btn-primary.disabled,.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active{background-color:#fed136;border-color:#fed136}.btn-primary .badge{color:#fed136;background-color:#fff}.btn-xl{color:#fff;background-color:#fed136;border-color:#fed136;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700;border-radius:3px;font-size:18px;padding:20px 40px}.btn-xl:hover,.btn-xl:focus,.btn-xl:active,.btn-xl.active,.open .dropdown-toggle.btn-xl{color:#fff;background-color:#fec503;border-color:#f6bf01}.btn-xl:active,.btn-xl.active,.open .dropdown-toggle.btn-xl{background-image:none}.btn-xl.disabled,.btn-xl[disabled],fieldset[disabled] .btn-xl,.btn-xl.disabled:hover,.btn-xl[disabled]:hover,fieldset[disabled] .btn-xl:hover,.btn-xl.disabled:focus,.btn-xl[disabled]:focus,fieldset[disabled] .btn-xl:focus,.btn-xl.disabled:active,.btn-xl[disabled]:active,fieldset[disabled] .btn-xl:active,.btn-xl.disabled.active,.btn-xl[disabled].active,fieldset[disabled] .btn-xl.active{background-color:#fed136;border-color:#fed136}.btn-xl .badge{color:#fed136;background-color:#fff}.navbar-default{background-color:#222;border-color:transparent}.navbar-default .navbar-brand{color:#fed136;font-family:"Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive}.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active{color:#fec503}.navbar-default .navbar-collapse{border-color:rgba(255,255,255,.02)}.navbar-default .navbar-toggle{background-color:#fed136;border-color:#fed136}.navbar-default .navbar-toggle .icon-bar{background-color:#fff}.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:#fed136}.navbar-default .nav li a{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:400;letter-spacing:1px;color:#fff}.navbar-default .nav li a:hover,.navbar-default .nav li a:focus{color:#fed136;outline:0}.navbar-default .navbar-nav>.active>a{border-radius:0;color:#fff;background-color:#fed136}.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus{color:#fff;background-color:#fec503}@media (min-width:768px){.navbar-default{background-color:transparent;padding:25px 0;-webkit-transition:padding .3s;-moz-transition:padding .3s;transition:padding .3s;border:0}.navbar-default .navbar-brand{font-size:2em;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}.navbar-default .navbar-nav>.active>a{border-radius:3px}.navbar-default.navbar-shrink{background-color:#222;padding:10px 0}.navbar-default.navbar-shrink .navbar-brand{font-size:1.5em}}header{background-image:url(http://s14.postimg.org/ceonhktsx/header_bg.jpg);background-repeat:none;background-attachment:scroll;background-position:center center;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;text-align:center;color:#fff}header .intro-text{padding-top:100px;padding-bottom:50px}header .intro-text .intro-lead-in{font-family:"Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:italic;font-size:22px;line-height:22px;margin-bottom:25px}header .intro-text .intro-heading{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700;font-size:50px;line-height:50px;margin-bottom:25px}@media (min-width:768px){header .intro-text{padding-top:300px;padding-bottom:200px}header .intro-text .intro-lead-in{font-family:"Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:italic;font-size:40px;line-height:40px;margin-bottom:25px}header .intro-text .intro-heading{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700;font-size:75px;line-height:75px;margin-bottom:50px}}section{padding:100px 0}section h2.section-heading{font-size:40px;margin-top:0;margin-bottom:15px}section h3.section-subheading{font-size:16px;font-family:"Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:none;font-style:italic;font-weight:400;margin-bottom:75px}@media (min-width:768px){section{padding:150px 0}}.service-heading{margin:15px 0;text-transform:none}#portfolio .portfolio-item{margin:0 0 15px;right:0}#portfolio .portfolio-item .portfolio-link{display:block;position:relative;max-width:400px;margin:0 auto}#portfolio .portfolio-item .portfolio-link .portfolio-hover{background:rgba(254,209,54,.9);position:absolute;width:100%;height:100%;opacity:0;transition:all ease .5s;-webkit-transition:all ease .5s;-moz-transition:all ease .5s}#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover{opacity:1}#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content{position:absolute;width:100%;height:20px;font-size:20px;text-align:center;top:50%;margin-top:-12px;color:#fff}#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i{margin-top:-12px}#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4{margin:0}#portfolio .portfolio-item .portfolio-caption{max-width:400px;margin:0 auto;background-color:#fff;text-align:center;padding:25px}#portfolio .portfolio-item .portfolio-caption h4{text-transform:none;margin:0}#portfolio .portfolio-item .portfolio-caption p{font-family:"Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:italic;font-size:16px;margin:0}#portfolio *{z-index:2}@media (min-width:767px){#portfolio .portfolio-item{margin:0 0 30px}}.timeline{list-style:none;padding:0;position:relative}.timeline:before{top:0;bottom:0;position:absolute;content:"";width:2px;background-color:#f1f1f1;left:40px;margin-left:-1.5px}.timeline>li{margin-bottom:50px;position:relative;min-height:50px}.timeline>li:before,.timeline>li:after{content:" ";display:table}.timeline>li:after{clear:both}.timeline>li .timeline-panel{width:100%;float:right;padding:0 20px 0 100px;position:relative;text-align:left}.timeline>li .timeline-panel:before{border-left-width:0;border-right-width:15px;left:-15px;right:auto}.timeline>li .timeline-panel:after{border-left-width:0;border-right-width:14px;left:-14px;right:auto}.timeline>li .timeline-image{left:0;margin-left:0;width:80px;height:80px;position:absolute;z-index:100;background-color:#fed136;color:#fff;border-radius:100%;border:7px solid #f1f1f1;text-align:center}.timeline>li .timeline-image h4{font-size:10px;margin-top:12px;line-height:14px}.timeline>li.timeline-inverted>.timeline-panel{float:right;text-align:left;padding:0 20px 0 100px}.timeline>li.timeline-inverted>.timeline-panel:before{border-left-width:0;border-right-width:15px;left:-15px;right:auto}.timeline>li.timeline-inverted>.timeline-panel:after{border-left-width:0;border-right-width:14px;left:-14px;right:auto}.timeline>li:last-child{margin-bottom:0}.timeline .timeline-heading h4{margin-top:0;color:inherit}.timeline .timeline-heading h4.subheading{text-transform:none}.timeline .timeline-body>p,.timeline .timeline-body>ul{margin-bottom:0}@media (min-width:768px){.timeline:before{left:50%}.timeline>li{margin-bottom:100px;min-height:100px}.timeline>li .timeline-panel{width:41%;float:left;padding:0 20px 20px 30px;text-align:right}.timeline>li .timeline-image{width:100px;height:100px;left:50%;margin-left:-50px}.timeline>li .timeline-image h4{font-size:13px;margin-top:16px;line-height:18px}.timeline>li.timeline-inverted>.timeline-panel{float:right;text-align:left;padding:0 30px 20px 20px}}@media (min-width:992px){.timeline>li{min-height:150px}.timeline>li .timeline-panel{padding:0 20px 20px}.timeline>li .timeline-image{width:150px;height:150px;margin-left:-75px}.timeline>li .timeline-image h4{font-size:18px;margin-top:30px;line-height:26px}.timeline>li.timeline-inverted>.timeline-panel{padding:0 20px 20px}}@media (min-width:1200px){.timeline>li{min-height:170px}.timeline>li .timeline-panel{padding:0 20px 20px 100px}.timeline>li .timeline-image{width:170px;height:170px;margin-left:-85px}.timeline>li .timeline-image h4{margin-top:40px}.timeline>li.timeline-inverted>.timeline-panel{padding:0 100px 20px 20px}}.team-member{text-align:center;margin-bottom:50px}.team-member img{margin:0 auto;border:7px solid #fff}.team-member h4{margin-top:25px;margin-bottom:0;text-transform:none}.team-member p{margin-top:0}aside.clients img{margin:50px auto}section#contact{background-color:#222;background:#333;background-position:center;background-repeat:no-repeat}section#contact .section-heading{color:#fff}section#contact .form-group{margin-bottom:25px}section#contact .form-group input,section#contact .form-group textarea{padding:20px}section#contact .form-group input.form-control{height:auto}section#contact .form-group textarea.form-control{height:236px}section#contact .form-control:focus{border-color:#fed136;box-shadow:none}section#contact ::-webkit-input-placeholder{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700;color:#bbb}section#contact :-moz-placeholder{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700;color:#bbb}section#contact ::-moz-placeholder{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700;color:#bbb}section#contact :-ms-input-placeholder{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:700;color:#bbb}section#contact .text-danger{color:#e74c3c}footer{padding:25px 0;text-align:center}footer span.copyright{line-height:40px;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;text-transform:none}footer ul.quicklinks{margin-bottom:0;line-height:40px;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;text-transform:none}ul.social-buttons{margin-bottom:0}ul.social-buttons li a{display:block;background-color:#222;height:40px;width:40px;border-radius:100%;font-size:20px;line-height:40px;color:#fff;outline:0;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}ul.social-buttons li a:hover,ul.social-buttons li a:focus,ul.social-buttons li a:active{background-color:#fed136}.btn:focus,.btn:active,.btn.active,.btn:active:focus{outline:0}.portfolio-modal .modal-content{border-radius:0;background-clip:border-box;-webkit-box-shadow:none;box-shadow:none;border:0;min-height:100%;padding:100px 0;text-align:center}.portfolio-modal .modal-content h2{margin-bottom:15px;font-size:3em}.portfolio-modal .modal-content p{margin-bottom:30px}.portfolio-modal .modal-content p.item-intro{margin:20px 0 30px;font-family:"Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:italic;font-size:16px}.portfolio-modal .modal-content ul.list-inline{margin-bottom:30px;margin-top:0}.portfolio-modal .modal-content img{margin-bottom:30px}.portfolio-modal .close-modal{position:absolute;width:75px;height:75px;background-color:transparent;top:25px;right:25px;cursor:pointer}.portfolio-modal .close-modal:hover{opacity:.3}.portfolio-modal .close-modal .lr{height:75px;width:1px;margin-left:35px;background-color:#222;transform:rotate(45deg);-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);z-index:1051}.portfolio-modal .close-modal .lr .rl{height:75px;width:1px;background-color:#222;transform:rotate(90deg);-ms-transform:rotate(90deg);-webkit-transform:rotate(90deg);z-index:1052}.portfolio-modal .modal-backdrop{opacity:0;display:none}::-moz-selection{text-shadow:none;background:#fed136}::selection{text-shadow:none;background:#fed136}img::selection{background:0 0}img::-moz-selection{background:0 0}body{webkit-tap-highlight-color:#fed136}
-    </style>
+#copyright {
+  background: #F1F1F1;
+  color: #333;
+}
+#copyright a {
+  color: #333;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
 
-    <!-- Custom Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+#hero-area .btn{margin-top: 15px;}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  .nav > li > a {
+    padding: 12px 8px;
+    line-height: 21px;
+  }
+  .social-links{padding-top: 15px;}
+}
 
-</head>
+@media (min-width: 320px) and (max-width: 480px) {
+  #hero-area .btn{margin-top: 15px;}
+  .navbar-default{background: rgba(0, 0, 0, 0.8);}
+  .social-links{padding-top: 15px;}
+  .row {padding: 40px 0px;}
 
-<body id="page-top" class="index">
+}
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">TYPOS 1.0</a>
-            </div>
+@charset "UTF-8";
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Pendaftaran</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio1">Peraturan</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Data Peserta</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Download Soal</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#" disabled="disabled" data-toggle="tooltip" data-placement="bottom" title="HANYA DAPAT DIBUKA PAS HARI H">SUBMIT TO</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+Copyright (c) 2013 Daniel Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated-late {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.delay-0-5 {
+  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  /* Safari and Chrome */
+}
+.delay-1 {
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  /* Safari and Chrome */
+}
+.delay-1-5 {
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+  /* Safari and Chrome */
+}
+.delay-1-8 {
+  animation-delay: 1.8s;
+  -webkit-animation-delay: 1.8s;
+  /* Safari and Chrome */
+}
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+@-webkit-keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  40% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  60% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  40% {
+    -webkit-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  60% {
+    -webkit-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+.swing {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    -ms-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    -ms-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    -ms-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    -ms-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    -ms-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+.wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+}
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  80% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  80% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  80% {
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+}
+@keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+}
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+@keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  animation-name: bounceOutDown;
+}
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+}
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig;
+}
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig;
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig;
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.fadeInUpHide {
+  -webkit-animation-name: fadeInUpHide;
+  animation-name: fadeInUpHide;
+}
+/*for Nave use*/
+@-webkit-keyframes fadeInUpHide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUpHide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.fadeInUpHide {
+  -webkit-animation-name: fadeInUpHide;
+  animation-name: fadeInUpHide;
+  margin-top: -70px;
+}
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig;
+}
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig;
+}
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig;
+}
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig;
+}
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+.animated.flip {
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+}
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    -ms-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    -ms-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+@keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    -ms-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    -ms-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  animation-name: flipOutY;
+}
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    -ms-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    -ms-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+@keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    -ms-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft;
+}
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight;
+}
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft;
+}
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight;
+}
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+}
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft;
+}
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight;
+}
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft;
+}
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight;
+}
+@-webkit-keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+@-webkit-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+@-webkit-keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+@-webkit-keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+@-webkit-keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+.slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp;
+}
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  20%,
+  60% {
+    -webkit-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  40% {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    -webkit-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+@keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  20%,
+  60% {
+    -webkit-transform: rotate(80deg);
+    -ms-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  40% {
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    -ms-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    -webkit-transform: translateY(700px);
+    -ms-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+.hinge {
+  -webkit-animation-name: hinge;
+  animation-name: hinge;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    -ms-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+.rollIn {
+  -webkit-animation-name: rollIn;
+  animation-name: rollIn;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    -ms-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+.rollOut {
+  -webkit-animation-name: rollOut;
+  animation-name: rollOut;
+}
+/*
+==============================================
+floating
+==============================================
+*/
+.floating {
+  animation-name: floating;
+  -webkit-animation-name: floating;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(8%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(8%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+        </style>
+
+
+        <!--Icon Fonts-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+        <!-- jQuery Load -->
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+      </head>
+
+    <body data-spy="scroll" data-offset="20" data-target="#navbar">
+    <!-- Nav Menu Section -->
+    <div class="logo-menu">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="50">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header col-md-3">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#home"><i class="fa fa-briefcase"></i> TYPOS 2.0</a>
         </div>
-        <!-- /.container-fluid -->
+
+        <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="nav navbar-nav col-md-9 pull-right">
+                            <li class="active"><a href="#hero-area"><i class="fa fa-home"></i> Home</a></li>
+                            <li><a href="#services"><i class="fa fa-cogs"></i> Mekanisme</a></li>
+                            <li><a href="#downloadsoal"><i class="fa fa-flask"></i> Download SOAL</a></li>
+                            <li><a href="#clients"><i class="fa fa-puzzle-piece"></i> Sponsor</a></li>
+                            <li><a href="#contact"><i class="fa fa-envelope"></i> Kontak</a></li>
+                            </ul>
+        </div>
+      </div>
     </nav>
+    </div>
+<!-- Nav Menu Section End -->
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome and</div>
-                <div class="intro-heading">Try Your Possibility of SBMPTN</div>
-                <a href="https://youtu.be/wMLAlqq-Qvs" target="_blank" class="page-scroll btn btn-xl">Tell Me More</a>
-            </div>
+<!-- Hero Area Section -->
+
+<section id="hero-area">
+<div class="container">
+    <div class="row">
+<div class="col-md-12">
+        <h1 class="title">TYPOS 2.0</h1>
+        <h2 class="subtitle">Try Your Possibility Of SBMPTN 2.0</h2>
+
+        <img class="col-md-6 col-sm-6 col-xs-12 animated fadeInLeft" src="assets/img/hero/macbook.png" alt="">
+
+        <div class="col-md-6 col-sm-6 col-xs-12 animated fadeInRight delay-0-5">
+        <p>SBMPTN adalah persaingan yang tidak perlu ditakutkan. Cukup 1 kali saja ikut SBMPTN jadikan pilihan kita adalah kenangan yang indah di saat kita mengingatnya dikemudian hari. Siapkan strategimu, ikuti Try Out Online Nasional TYPOS 2.0 ini</p>
+        <a href="http://goo.gl/forms/EG60Kz4PkN" target="_blank" class="btn btn-primary btn-lg">Daftar (GRATIS)!</a>
+        <a href="#" class="btn btn-common btn-lg" id="lpb">List Peserta</a>
+        <p id="lp">List Peserta akan dipublish pada tanggal 24 April 2016</p>
         </div>
-    </header>
-<div style="margin-bottom:0px;" class="alert alert-danger text-center" role="alert">Laman BERKAS SOAL dan SUBMIT TO hanya bisa diakses pada hari H</div>
+</div>
 
-    <!-- Services Section -->
-    <section id="services" class="bg-blue">
-        <div class="container">
+    </div>
+</div>
+</section>
+
+<!-- Hero Area Section End-->
+
+
+
+<!-- Service Section -->
+
+<section id="services">
+
+<div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Apa itu TYPOS?</h2>
-                    <h4 class="section-subheading" style="color:#EEEEEE">TYPOS (Try Your Possibility Of SBMPTN) merupakan TO Online SBMPTN yang diadakan oleh OA Line@ SUSBM16(@rwt2746q). Event ini 100% GRATIS. Semoga dengan adanya event TO Online ini mampu menjadi acuan bagi teman-teman para pejuang SBMPTN semua untuk menggapai kesuksesan!. (Aamiin)</h3>
+                    <h2 class="title">Peraturan</h2>
                 </div>
-            </div>
-            <br/>
-            <div class="row text-center">
-                <a href="http://www.paywithapost.de/pay?id=843a6b2a-9a1d-46e0-a791-19bbe04b4751" class="btn btn-xl btn-primary" onclick="window.open('http://www.paywithapost.de/pay?id=843a6b2a-9a1d-46e0-a791-19bbe04b4751', 'newwindow', 'width=300, height=250'); return false;">Daftar</a>
-                <br/><br/><br/>
-                <h3>Jika kesulitan, kamu bisa mencoba mendaftar lewat line :</h3>
-                <br/><br/>
-                <a href="https://line.me/ti/p/%40rwt2746q" target="_blank"><img height="36" border="0" alt="Friends Added" src="http://biz.line.naver.jp/line_business/img/btn/addfriends_en.png"></a>
-                <h3>OR</h3> 
-                <a href="http://line.me/R/home/public/post?id=rwt2746q&postId=1145753516504060222" class="btn btn-success btn-xl" target="_blank">Go Post</a>
 
-            </div>
-        </div>
-    </section>
-    
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio1" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Peraturan</h2>
-                </div>
-            </div>
-            <div class="row">
+
                 <div class="list-group">
                     <a href="#" class="list-group-item active">
                     <h4 class="list-group-item-heading">Pendaftaran</h4>
-                    <p class="list-group-item-text">9 Maret - 24 Maret 2016</p>
+                    <p class="list-group-item-text">10 April - 23 April 2016</p>
                   </a>
                   <a href="#" class="list-group-item active">
                     <h4 class="list-group-item-heading">Jadwal Try Out</h4>
-                    <p class="list-group-item-text">IPA : Minggu, 27 Maret 2016 Pukul 09.00 WIB - 13.00 WIB</p>
-                    <p class="list-group-item-text">IPS : Minggu, 27 Maret 2016 Pukul 16.00 WIB - 20.00 WIB (Sudah dialokasi untuk ibadah bagi umat muslim) </p>
-                    <p class="list-group-item-text">IPC : Mengikuti kedua sesi tersebut</p>
+                    <p class="list-group-item-text">SESI 1 : <br/>
+                    SAINTEK & SOSHUM = 09.00 - 13.00 WIB<br/></p>
+                    <br/>
+                    <br/>
+                    <p class="list-group-item-text"><strong>SESI 2 :</strong><br/>
+                    SAINTEK & SOSHUM = 16.00 - 20.00 WIB<br/></p>
                   </a>
                 </div>
-            </div>
-            <div class="row">
+
+                <br/><br/>
+
+                <div class="col-md-6">
                 <h3>Syarat</h3>
+                
                 <ul class="list-group">
                   <li class="list-group-item">Merupakan Warga Negara Indonesia/Pelajar Indonesia</li>
-                  <li class="list-group-item">Merupakan calon lulusan SMA (sederajat) 2016 atau lulusan SMA (sederajat) 20014&2015</li>
+                  <li class="list-group-item">Merupakan calon lulusan SMA (sederajat) 2016 atau lulusan SMA (sederajat) 2014&2015</li>
                   <li class="list-group-item">Memiliki gadget (HP/Laptop)</li>
                   <li class="list-group-item">Memiliki Koneksi Internet Yang memadai pada saat pelaksanaan TO</li>
                 </ul>
                 <br/>
                 <i>*Pastikan HP/Laptopnya terinstall aplikasi PDF Reader (Adobe Reader, Nitro PDF, dan sejenisnya)</i>
-                
-            </div>
-            <div class="row">
+                <br/><br/><br/>
+                </div>
+
+
+
+
+
+                <div class="col-md-6">
                 <h3>Tatacara dan Aturan</h3>
                 <ul class="list-group">
                   <li class="list-group-item">Memenuhi Syarat yang telah dicantumkan diatas </li>
-                  <li class="list-group-item">Mendaftar dan Terdaftar sebagai peserta TYPOS 1.0 <a class="page-scroll btn btn-success" href="#services">Daftar di sini</a></li>
-                  <li class="list-group-item">15 Menit sebelum pelaksanaan, soal akan dibagikan melalui website ( <a href="http://typos.ml">typos.ml</a> ) maupun OA Line@ SUSBM16 (@rwt2746q) dan peserta diharapkan mendownload berkas soal tersebut.</li>
-                  <li class="list-group-item">15 Menit sebelum penutupan segera submit jawaban kamu disini <a class="page-scroll btn btn-success" href="#" disabled="disabled" data-toggle="tooltip" data-placement="bottom" title="HANYA DAPAT DIBUKA PAS HARI H">Submit TO</a></li>
+                  <li class="list-group-item">Mendaftar dan Terdaftar sebagai peserta TYPOS 2.0 <a class="page-scroll btn btn-success" href="http://goo.gl/forms/EG60Kz4PkN" target="_blank">Daftar di sini</a></li>
+
+                  <li class="list-group-item">Peserta diharapkan mendownload Naskah Soal Try Out (format .pdf) di : <a class="page-scroll btn btn-success" href="#downloadsoal">Download Soal</a></li>
+
+                  <li class="list-group-item"> Peserta dapat mensubmit jawaban Try Outnya di : <a class="page-scroll btn btn-success" href="#sto">Submit TO</a></li>
                 </ul>
                 <br/>
-                <i>*Pastikan HP/Laptopnya terinstall aplikasi PDF Reader (Adobe Reader, Nitro PDF, dan sejenisnya)</i>
-            </div>
-        </div>
-    </section>
-    <!-- Team Section -->
-    <section id="team" class="bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Data Peserta</h2>
-                    <h3 class="section-subheading text-muted">Silakan Cek Kode Registrasimu!</h3>
-                </div>
-            </div>
-            <div class="row">
-                <iframe width="100%" height="400px" src="https://docs.google.com/spreadsheets/d/1XNAGCaR5MQ64o4-i1taOGiu73E0hZhkgsu20-KjAZBY/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-            </div>
-        </div>
-    </section>
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Download Berkas Soal</h2>
-                    <h3 class="section-subheading text-muted">Download berkas soal sesuai dengan Jenis TO yang kamu pilih (Untuk IPC Download keduanya)</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 portfolio-item">
-                    <a href="#" disabled="disabled" data-toggle="tooltip" data-placement="bottom" title="HANYA DAPAT DIBUKA PAS HARI H" class="portfolio-link" disabled="true">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="http://s12.postimg.org/lmg3uk4kt/ips.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>IPS</h4>
-                        <br/>
-                        <a href="#" disabled="disabled" data-toggle="tooltip" data-placement="bottom" title="HANYA DAPAT DIBUKA PAS HARI H" class="btn btn-success">Download Soal</a>
-                        <br/>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 portfolio-item">
-                    <a href="https://goo.gl/oYNg0P">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="http://s12.postimg.org/hwgh1nsq5/ipa.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>IPA</h4>
-                        <br/>
-                        <a href="https://goo.gl/O9TNfE" class="btn btn-success">Download Soal</a>
-                    </div>
+                <p id="sto"><i>*Jawaban hanya bisa disubmit ketika pelaksanaan</i></p>
                 </div>
             </div>
         </div>
-    </section>
+
+ </section>
+<!-- Service Section End -->
 
 
-    
-    <!-- Contact Section -->
+
+<!-- Portfolio Section -->
+
+    <section id="downloadsoal">
+    <div class="container">
+    <div class="row">
+    <h1 class="title">Download SOAL</h1>
+    <h2 class="subtitle">Download naskah soal dan baca petunjuk pengerjaan pada naskah soal</h2>
+
+
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <a href="#ds" class="text-center">
+    <div style="width:auto;height:240px;background:#333333; margin:10px;color:#EEEEEE;font-size:30px;padding-top:90px">
+    SAINTEK
+    </div>
+    </a>
+    </div>
+
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <a href="#ds" class="text-center">
+    <div style="width:auto;height:240px;background:#333333; margin:10px;color:#EEEEEE;font-size:30px;padding-top:90px">
+    SOSHUM
+    </div>
+    </a>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" >
+        
+        <p id="ds" style="font-size:24px;padding-top:90px">Soal hanya bisa didownload ketika pelaksanaan :)</p>
+
+    </div>
+
+
+      
+    </div>
+    </div>
+    </section>
+<!-- Portfolio Section End -->
+
+
+<!-- Client Section -->
+    <section id="clients">
+    <div class="container">
+    <div class="row">
+
+    <h1 class="title">Sponsorship and Media Partner</h1>
+    <h2 class="subtitle">Merekalah yang membantu kami ada</h2>
+
+    <div class="wow fadeInDown">
+    <img class="col-md-2 col-md-2 col-sm-2 col-xs-12" src="assets/img/clients/mo.png" alt="client-3">
+
+    <img class="col-md-2 col-md-2 col-sm-2 col-xs-12" src="assets/img/clients/lb.png" alt="client-4">
+
+    <img class="col-md-2 col-md-2 col-sm-2 col-xs-12" src="assets/img/clients/mypanel.png" alt="client-1">
+
+    <img class="col-md-2 col-md-2 col-sm-2 col-xs-12" src="assets/img/clients/unsma.png" alt="client-2">
+
+    <img class="col-md-2 col-md-2 col-sm-2 col-xs-12" src="assets/img/clients/ib.png" alt="client-3">
+
+    <img class="col-md-2 col-md-2 col-sm-2 col-xs-12" src="assets/img/clients/susbm.png" alt="client-3">
+
+
+    </div>
+    </div>
+    </div>
+    </section>
+<!-- Client Section End -->
+
+
+
+
+<!-- Conatct Section -->
     <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Kritik, saran dan masukan bisa dikirimkan. Saya akan menerima dengan senang hati :)</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nama Lengkap*" id="name" required data-validation-required-message="Mohon isi nama kamu :)">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email *" id="email" required data-validation-required-message="Mohon isi email kamu :)">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Nomor HP *" id="phone" required data-validation-required-message="Mohon isi Nomor HP kamu :)">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Pesan *" id="message" required data-validation-required-message="Mohon isi pesan kamu"></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Kirim Pesan</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="container text-center">
+    <div class="row">
+    <h1 class="title">Contact us</h1>
+
+    <h2 class="subtitle">Yukk kirim kritik dan saranmu</h2>
+
+
+    <form role="form" class="contact-form" method="post">
+    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".5s">
+    <div class="form-group">
+    <div class="controls">
+    <input type="text" class="form-control" placeholder="Nama" name="name">
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="controls">
+    <input type="email" class="form-control email" placeholder="Email" name="email">
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="controls">
+    <input type="text" class="form-control requiredField" placeholder="Subject" name="subject">
+    </div>
+    </div>
+
+    <div class="form-group">
+
+    <div class="controls">
+    <textarea rows="7" class="form-control" placeholder="Pesan" name="message"></textarea>
+    </div>
+    </div>
+    <button type="submit" id="submit" class="btn btn-lg btn-common">Kirim</button><div id="success" style="color:#34495e;"></div>
+
+    </div>
+    </form>
+
+    <div class="col-md-6 wow fadeInRight">
+    <div class="social-links">
+    <a class="social" href="http://www.facebook.com/ahmadnurfadilah22" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+    <a class="social" href="http://www.facebook.com/madnurfadilah" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+    <a class="social" href="#" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>
+    <a class="social" href="#" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+	</div>
+<div class="contact-info">
+    <p><i class="fa fa-map-marker"></i> Cikarang Pusat, Bekasi, Indonesia</p>
+     <p><i class="fa fa-envelope"></i> ahmadnurfadilah22@gmail.com</p>
+</div>
+
+    <p>Memberi kontribusi sebelum mati merupakan harga mati bagi diri ini.<br>
+    </p>
+    
+    </div>
+
+    </div>
+    </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; SUSBM16 - 2016</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="http://www.facebook.com/ahmadnurfadilah22" target="_blank"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="http://www.twitter.com/madnurfadilah" target="_blank"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li>Created by : <a href="http://ahmadnurfadilah.github.io" target="_blank">AHMAD NURFADILAH</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<!-- Conatct Section End-->
+
+
+    <div id="copyright">
+    <div class="container">
+    <div class="col-md-10"><p>©SUSBM 2016 All right reserved. <a href="http://line.me/ti/p/~@rwt2746q"></a></p></div>
+    <div class="col-md-2">
+        <span class="to-top pull-right"><a href="#hero-area"><i class="fa fa-angle-up fa-2x"></i></a></span>
         </div>
-    </footer>
-
-
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js"></script>
-    <script>
-        /**
- * cbpAnimatedHeader.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2013, Codrops
- * http://www.codrops.com
- */
-var cbpAnimatedHeader = (function() {
-
-    var docElem = document.documentElement,
-        header = document.querySelector( '.navbar-default' ),
-        didScroll = false,
-        changeHeaderOn = 300;
-
-    function init() {
-        window.addEventListener( 'scroll', function( event ) {
-            if( !didScroll ) {
-                didScroll = true;
-                setTimeout( scrollPage, 250 );
-            }
-        }, false );
-    }
-
-    function scrollPage() {
-        var sy = scrollY();
-        if ( sy >= changeHeaderOn ) {
-            classie.add( header, 'navbar-shrink' );
-        }
-        else {
-            classie.remove( header, 'navbar-shrink' );
-        }
-        didScroll = false;
-    }
-
-    function scrollY() {
-        return window.pageYOffset || docElem.scrollTop;
-    }
-
-    init();
-
-})();
-    </script>
-
-    <!-- Contact Form JavaScript -->
-    <script>
-        /* jqBootstrapValidation
- * A plugin for automating validation on Twitter Bootstrap formatted forms.
- *
- * v1.3.6
- *
- * License: MIT <http://opensource.org/licenses/mit-license.php> - see LICENSE file
- *
- * http://ReactiveRaven.github.com/jqBootstrapValidation/
- */
-
-(function( $ ){
-
-    var createdElements = [];
-
-    var defaults = {
-        options: {
-            prependExistingHelpBlock: false,
-            sniffHtml: true, // sniff for 'required', 'maxlength', etc
-            preventSubmit: true, // stop the form submit event from firing if validation fails
-            submitError: false, // function called if there is an error when trying to submit
-            submitSuccess: false, // function called just before a successful submit event is sent to the server
-            semanticallyStrict: false, // set to true to tidy up generated HTML output
-            autoAdd: {
-                helpBlocks: true
-            },
-            filter: function () {
-                // return $(this).is(":visible"); // only validate elements you can see
-                return true; // validate everything
-            }
-        },
-    methods: {
-      init : function( options ) {
-
-        var settings = $.extend(true, {}, defaults);
-
-        settings.options = $.extend(true, settings.options, options);
-
-        var $siblingElements = this;
-
-        var uniqueForms = $.unique(
-          $siblingElements.map( function () {
-            return $(this).parents("form")[0];
-          }).toArray()
-        );
-
-        $(uniqueForms).bind("submit", function (e) {
-          var $form = $(this);
-          var warningsFound = 0;
-          var $inputs = $form.find("input,textarea,select").not("[type=submit],[type=image]").filter(settings.options.filter);
-          $inputs.trigger("submit.validation").trigger("validationLostFocus.validation");
-
-          $inputs.each(function (i, el) {
-            var $this = $(el),
-              $controlGroup = $this.parents(".form-group").first();
-            if (
-              $controlGroup.hasClass("warning")
-            ) {
-              $controlGroup.removeClass("warning").addClass("error");
-              warningsFound++;
-            }
-          });
-
-          $inputs.trigger("validationLostFocus.validation");
-
-          if (warningsFound) {
-            if (settings.options.preventSubmit) {
-              e.preventDefault();
-            }
-            $form.addClass("error");
-            if ($.isFunction(settings.options.submitError)) {
-              settings.options.submitError($form, e, $inputs.jqBootstrapValidation("collectErrors", true));
-            }
-          } else {
-            $form.removeClass("error");
-            if ($.isFunction(settings.options.submitSuccess)) {
-              settings.options.submitSuccess($form, e);
-            }
-          }
-        });
-
-        return this.each(function(){
-
-          // Get references to everything we're interested in
-          var $this = $(this),
-            $controlGroup = $this.parents(".form-group").first(),
-            $helpBlock = $controlGroup.find(".help-block").first(),
-            $form = $this.parents("form").first(),
-            validatorNames = [];
-
-          // create message container if not exists
-          if (!$helpBlock.length && settings.options.autoAdd && settings.options.autoAdd.helpBlocks) {
-              $helpBlock = $('<div class="help-block" />');
-              $controlGroup.find('.controls').append($helpBlock);
-                            createdElements.push($helpBlock[0]);
-          }
-
-          // =============================================================
-          //                                     SNIFF HTML FOR VALIDATORS
-          // =============================================================
-
-          // *snort sniff snuffle*
-
-          if (settings.options.sniffHtml) {
-            var message = "";
-            // ---------------------------------------------------------
-            //                                                   PATTERN
-            // ---------------------------------------------------------
-            if ($this.attr("pattern") !== undefined) {
-              message = "Not in the expected format<!-- data-validation-pattern-message to override -->";
-              if ($this.data("validationPatternMessage")) {
-                message = $this.data("validationPatternMessage");
-              }
-              $this.data("validationPatternMessage", message);
-              $this.data("validationPatternRegex", $this.attr("pattern"));
-            }
-            // ---------------------------------------------------------
-            //                                                       MAX
-            // ---------------------------------------------------------
-            if ($this.attr("max") !== undefined || $this.attr("aria-valuemax") !== undefined) {
-              var max = ($this.attr("max") !== undefined ? $this.attr("max") : $this.attr("aria-valuemax"));
-              message = "Too high: Maximum of '" + max + "'<!-- data-validation-max-message to override -->";
-              if ($this.data("validationMaxMessage")) {
-                message = $this.data("validationMaxMessage");
-              }
-              $this.data("validationMaxMessage", message);
-              $this.data("validationMaxMax", max);
-            }
-            // ---------------------------------------------------------
-            //                                                       MIN
-            // ---------------------------------------------------------
-            if ($this.attr("min") !== undefined || $this.attr("aria-valuemin") !== undefined) {
-              var min = ($this.attr("min") !== undefined ? $this.attr("min") : $this.attr("aria-valuemin"));
-              message = "Too low: Minimum of '" + min + "'<!-- data-validation-min-message to override -->";
-              if ($this.data("validationMinMessage")) {
-                message = $this.data("validationMinMessage");
-              }
-              $this.data("validationMinMessage", message);
-              $this.data("validationMinMin", min);
-            }
-            // ---------------------------------------------------------
-            //                                                 MAXLENGTH
-            // ---------------------------------------------------------
-            if ($this.attr("maxlength") !== undefined) {
-              message = "Too long: Maximum of '" + $this.attr("maxlength") + "' characters<!-- data-validation-maxlength-message to override -->";
-              if ($this.data("validationMaxlengthMessage")) {
-                message = $this.data("validationMaxlengthMessage");
-              }
-              $this.data("validationMaxlengthMessage", message);
-              $this.data("validationMaxlengthMaxlength", $this.attr("maxlength"));
-            }
-            // ---------------------------------------------------------
-            //                                                 MINLENGTH
-            // ---------------------------------------------------------
-            if ($this.attr("minlength") !== undefined) {
-              message = "Too short: Minimum of '" + $this.attr("minlength") + "' characters<!-- data-validation-minlength-message to override -->";
-              if ($this.data("validationMinlengthMessage")) {
-                message = $this.data("validationMinlengthMessage");
-              }
-              $this.data("validationMinlengthMessage", message);
-              $this.data("validationMinlengthMinlength", $this.attr("minlength"));
-            }
-            // ---------------------------------------------------------
-            //                                                  REQUIRED
-            // ---------------------------------------------------------
-            if ($this.attr("required") !== undefined || $this.attr("aria-required") !== undefined) {
-              message = settings.builtInValidators.required.message;
-              if ($this.data("validationRequiredMessage")) {
-                message = $this.data("validationRequiredMessage");
-              }
-              $this.data("validationRequiredMessage", message);
-            }
-            // ---------------------------------------------------------
-            //                                                    NUMBER
-            // ---------------------------------------------------------
-            if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "number") {
-              message = settings.builtInValidators.number.message;
-              if ($this.data("validationNumberMessage")) {
-                message = $this.data("validationNumberMessage");
-              }
-              $this.data("validationNumberMessage", message);
-            }
-            // ---------------------------------------------------------
-            //                                                     EMAIL
-            // ---------------------------------------------------------
-            if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "email") {
-              message = "Not a valid email address<!-- data-validator-validemail-message to override -->";
-              if ($this.data("validationValidemailMessage")) {
-                message = $this.data("validationValidemailMessage");
-              } else if ($this.data("validationEmailMessage")) {
-                message = $this.data("validationEmailMessage");
-              }
-              $this.data("validationValidemailMessage", message);
-            }
-            // ---------------------------------------------------------
-            //                                                MINCHECKED
-            // ---------------------------------------------------------
-            if ($this.attr("minchecked") !== undefined) {
-              message = "Not enough options checked; Minimum of '" + $this.attr("minchecked") + "' required<!-- data-validation-minchecked-message to override -->";
-              if ($this.data("validationMincheckedMessage")) {
-                message = $this.data("validationMincheckedMessage");
-              }
-              $this.data("validationMincheckedMessage", message);
-              $this.data("validationMincheckedMinchecked", $this.attr("minchecked"));
-            }
-            // ---------------------------------------------------------
-            //                                                MAXCHECKED
-            // ---------------------------------------------------------
-            if ($this.attr("maxchecked") !== undefined) {
-              message = "Too many options checked; Maximum of '" + $this.attr("maxchecked") + "' required<!-- data-validation-maxchecked-message to override -->";
-              if ($this.data("validationMaxcheckedMessage")) {
-                message = $this.data("validationMaxcheckedMessage");
-              }
-              $this.data("validationMaxcheckedMessage", message);
-              $this.data("validationMaxcheckedMaxchecked", $this.attr("maxchecked"));
-            }
-          }
-
-          // =============================================================
-          //                                       COLLECT VALIDATOR NAMES
-          // =============================================================
-
-          // Get named validators
-          if ($this.data("validation") !== undefined) {
-            validatorNames = $this.data("validation").split(",");
-          }
-
-          // Get extra ones defined on the element's data attributes
-          $.each($this.data(), function (i, el) {
-            var parts = i.replace(/([A-Z])/g, ",$1").split(",");
-            if (parts[0] === "validation" && parts[1]) {
-              validatorNames.push(parts[1]);
-            }
-          });
-
-          // =============================================================
-          //                                     NORMALISE VALIDATOR NAMES
-          // =============================================================
-
-          var validatorNamesToInspect = validatorNames;
-          var newValidatorNamesToInspect = [];
-
-          do // repeatedly expand 'shortcut' validators into their real validators
-          {
-            // Uppercase only the first letter of each name
-            $.each(validatorNames, function (i, el) {
-              validatorNames[i] = formatValidatorName(el);
-            });
-
-            // Remove duplicate validator names
-            validatorNames = $.unique(validatorNames);
-
-            // Pull out the new validator names from each shortcut
-            newValidatorNamesToInspect = [];
-            $.each(validatorNamesToInspect, function(i, el) {
-              if ($this.data("validation" + el + "Shortcut") !== undefined) {
-                // Are these custom validators?
-                // Pull them out!
-                $.each($this.data("validation" + el + "Shortcut").split(","), function(i2, el2) {
-                  newValidatorNamesToInspect.push(el2);
-                });
-              } else if (settings.builtInValidators[el.toLowerCase()]) {
-                // Is this a recognised built-in?
-                // Pull it out!
-                var validator = settings.builtInValidators[el.toLowerCase()];
-                if (validator.type.toLowerCase() === "shortcut") {
-                  $.each(validator.shortcut.split(","), function (i, el) {
-                    el = formatValidatorName(el);
-                    newValidatorNamesToInspect.push(el);
-                    validatorNames.push(el);
-                  });
-                }
-              }
-            });
-
-            validatorNamesToInspect = newValidatorNamesToInspect;
-
-          } while (validatorNamesToInspect.length > 0)
-
-          // =============================================================
-          //                                       SET UP VALIDATOR ARRAYS
-          // =============================================================
-
-          var validators = {};
-
-          $.each(validatorNames, function (i, el) {
-            // Set up the 'override' message
-            var message = $this.data("validation" + el + "Message");
-            var hasOverrideMessage = (message !== undefined);
-            var foundValidator = false;
-            message =
-              (
-                message
-                  ? message
-                  : "'" + el + "' validation failed <!-- Add attribute 'data-validation-" + el.toLowerCase() + "-message' to input to change this message -->"
-              )
-            ;
-
-            $.each(
-              settings.validatorTypes,
-              function (validatorType, validatorTemplate) {
-                if (validators[validatorType] === undefined) {
-                  validators[validatorType] = [];
-                }
-                if (!foundValidator && $this.data("validation" + el + formatValidatorName(validatorTemplate.name)) !== undefined) {
-                  validators[validatorType].push(
-                    $.extend(
-                      true,
-                      {
-                        name: formatValidatorName(validatorTemplate.name),
-                        message: message
-                      },
-                      validatorTemplate.init($this, el)
-                    )
-                  );
-                  foundValidator = true;
-                }
-              }
-            );
-
-            if (!foundValidator && settings.builtInValidators[el.toLowerCase()]) {
-
-              var validator = $.extend(true, {}, settings.builtInValidators[el.toLowerCase()]);
-              if (hasOverrideMessage) {
-                validator.message = message;
-              }
-              var validatorType = validator.type.toLowerCase();
-
-              if (validatorType === "shortcut") {
-                foundValidator = true;
-              } else {
-                $.each(
-                  settings.validatorTypes,
-                  function (validatorTemplateType, validatorTemplate) {
-                    if (validators[validatorTemplateType] === undefined) {
-                      validators[validatorTemplateType] = [];
-                    }
-                    if (!foundValidator && validatorType === validatorTemplateType.toLowerCase()) {
-                      $this.data("validation" + el + formatValidatorName(validatorTemplate.name), validator[validatorTemplate.name.toLowerCase()]);
-                      validators[validatorType].push(
-                        $.extend(
-                          validator,
-                          validatorTemplate.init($this, el)
-                        )
-                      );
-                      foundValidator = true;
-                    }
-                  }
-                );
-              }
-            }
-
-            if (! foundValidator) {
-              $.error("Cannot find validation info for '" + el + "'");
-            }
-          });
-
-          // =============================================================
-          //                                         STORE FALLBACK VALUES
-          // =============================================================
-
-          $helpBlock.data(
-            "original-contents",
-            (
-              $helpBlock.data("original-contents")
-                ? $helpBlock.data("original-contents")
-                : $helpBlock.html()
-            )
-          );
-
-          $helpBlock.data(
-            "original-role",
-            (
-              $helpBlock.data("original-role")
-                ? $helpBlock.data("original-role")
-                : $helpBlock.attr("role")
-            )
-          );
-
-          $controlGroup.data(
-            "original-classes",
-            (
-              $controlGroup.data("original-clases")
-                ? $controlGroup.data("original-classes")
-                : $controlGroup.attr("class")
-            )
-          );
-
-          $this.data(
-            "original-aria-invalid",
-            (
-              $this.data("original-aria-invalid")
-                ? $this.data("original-aria-invalid")
-                : $this.attr("aria-invalid")
-            )
-          );
-
-          // =============================================================
-          //                                                    VALIDATION
-          // =============================================================
-
-          $this.bind(
-            "validation.validation",
-            function (event, params) {
-
-              var value = getValue($this);
-
-              // Get a list of the errors to apply
-              var errorsFound = [];
-
-              $.each(validators, function (validatorType, validatorTypeArray) {
-                if (value || value.length || (params && params.includeEmpty) || (!!settings.validatorTypes[validatorType].blockSubmit && params && !!params.submitting)) {
-                  $.each(validatorTypeArray, function (i, validator) {
-                    if (settings.validatorTypes[validatorType].validate($this, value, validator)) {
-                      errorsFound.push(validator.message);
-                    }
-                  });
-                }
-              });
-
-              return errorsFound;
-            }
-          );
-
-          $this.bind(
-            "getValidators.validation",
-            function () {
-              return validators;
-            }
-          );
-
-          // =============================================================
-          //                                             WATCH FOR CHANGES
-          // =============================================================
-          $this.bind(
-            "submit.validation",
-            function () {
-              return $this.triggerHandler("change.validation", {submitting: true});
-            }
-          );
-          $this.bind(
-            [
-              "keyup",
-              "focus",
-              "blur",
-              "click",
-              "keydown",
-              "keypress",
-              "change"
-            ].join(".validation ") + ".validation",
-            function (e, params) {
-
-              var value = getValue($this);
-
-              var errorsFound = [];
-
-              $controlGroup.find("input,textarea,select").each(function (i, el) {
-                var oldCount = errorsFound.length;
-                $.each($(el).triggerHandler("validation.validation", params), function (j, message) {
-                  errorsFound.push(message);
-                });
-                if (errorsFound.length > oldCount) {
-                  $(el).attr("aria-invalid", "true");
-                } else {
-                  var original = $this.data("original-aria-invalid");
-                  $(el).attr("aria-invalid", (original !== undefined ? original : false));
-                }
-              });
-
-              $form.find("input,select,textarea").not($this).not("[name=\"" + $this.attr("name") + "\"]").trigger("validationLostFocus.validation");
-
-              errorsFound = $.unique(errorsFound.sort());
-
-              // Were there any errors?
-              if (errorsFound.length) {
-                // Better flag it up as a warning.
-                $controlGroup.removeClass("success error").addClass("warning");
-
-                // How many errors did we find?
-                if (settings.options.semanticallyStrict && errorsFound.length === 1) {
-                  // Only one? Being strict? Just output it.
-                  $helpBlock.html(errorsFound[0] + 
-                    ( settings.options.prependExistingHelpBlock ? $helpBlock.data("original-contents") : "" ));
-                } else {
-                  // Multiple? Being sloppy? Glue them together into an UL.
-                  $helpBlock.html("<ul role=\"alert\"><li>" + errorsFound.join("</li><li>") + "</li></ul>" +
-                    ( settings.options.prependExistingHelpBlock ? $helpBlock.data("original-contents") : "" ));
-                }
-              } else {
-                $controlGroup.removeClass("warning error success");
-                if (value.length > 0) {
-                  $controlGroup.addClass("success");
-                }
-                $helpBlock.html($helpBlock.data("original-contents"));
-              }
-
-              if (e.type === "blur") {
-                $controlGroup.removeClass("success");
-              }
-            }
-          );
-          $this.bind("validationLostFocus.validation", function () {
-            $controlGroup.removeClass("success");
-          });
-        });
-      },
-      destroy : function( ) {
-
-        return this.each(
-          function() {
-
-            var
-              $this = $(this),
-              $controlGroup = $this.parents(".form-group").first(),
-              $helpBlock = $controlGroup.find(".help-block").first();
-
-            // remove our events
-            $this.unbind('.validation'); // events are namespaced.
-            // reset help text
-            $helpBlock.html($helpBlock.data("original-contents"));
-            // reset classes
-            $controlGroup.attr("class", $controlGroup.data("original-classes"));
-            // reset aria
-            $this.attr("aria-invalid", $this.data("original-aria-invalid"));
-            // reset role
-            $helpBlock.attr("role", $this.data("original-role"));
-                        // remove all elements we created
-                        if (createdElements.indexOf($helpBlock[0]) > -1) {
-                            $helpBlock.remove();
-                        }
-
-          }
-        );
-
-      },
-      collectErrors : function(includeEmpty) {
-
-        var errorMessages = {};
-        this.each(function (i, el) {
-          var $el = $(el);
-          var name = $el.attr("name");
-          var errors = $el.triggerHandler("validation.validation", {includeEmpty: true});
-          errorMessages[name] = $.extend(true, errors, errorMessages[name]);
-        });
-
-        $.each(errorMessages, function (i, el) {
-          if (el.length === 0) {
-            delete errorMessages[i];
-          }
-        });
-
-        return errorMessages;
-
-      },
-      hasErrors: function() {
-
-        var errorMessages = [];
-
-        this.each(function (i, el) {
-          errorMessages = errorMessages.concat(
-            $(el).triggerHandler("getValidators.validation") ? $(el).triggerHandler("validation.validation", {submitting: true}) : []
-          );
-        });
-
-        return (errorMessages.length > 0);
-      },
-      override : function (newDefaults) {
-        defaults = $.extend(true, defaults, newDefaults);
+    </div>
+    </div>
+<!-- Copyright Section End-->
+
+        <!-- Bootstrap JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+            <!-- Smooth Scroll -->
+                    <!-- Smooth Scroll -->
+        <script type="text/javascript">
+            $(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
       }
-    },
-        validatorTypes: {
-      callback: {
-        name: "callback",
-        init: function ($this, name) {
-          return {
-            validatorName: name,
-            callback: $this.data("validation" + name + "Callback"),
-            lastValue: $this.val(),
-            lastValid: true,
-            lastFinished: true
-          };
-        },
-        validate: function ($this, value, validator) {
-          if (validator.lastValue === value && validator.lastFinished) {
-            return !validator.lastValid;
-          }
+    }
+  });
+});
+        </script>
 
-          if (validator.lastFinished === true)
-          {
-            validator.lastValue = value;
-            validator.lastValid = true;
-            validator.lastFinished = false;
-
-            var rrjqbvValidator = validator;
-            var rrjqbvThis = $this;
-            executeFunctionByName(
-              validator.callback,
-              window,
-              $this,
-              value,
-              function (data) {
-                if (rrjqbvValidator.lastValue === data.value) {
-                  rrjqbvValidator.lastValid = data.valid;
-                  if (data.message) {
-                    rrjqbvValidator.message = data.message;
-                  }
-                  rrjqbvValidator.lastFinished = true;
-                  rrjqbvThis.data("validation" + rrjqbvValidator.validatorName + "Message", rrjqbvValidator.message);
-                  // Timeout is set to avoid problems with the events being considered 'already fired'
-                  setTimeout(function () {
-                    rrjqbvThis.trigger("change.validation");
-                  }, 1); // doesn't need a long timeout, just long enough for the event bubble to burst
-                }
-              }
-            );
-          }
-
-          return false;
-
-        }
-      },
-      ajax: {
-        name: "ajax",
-        init: function ($this, name) {
-          return {
-            validatorName: name,
-            url: $this.data("validation" + name + "Ajax"),
-            lastValue: $this.val(),
-            lastValid: true,
-            lastFinished: true
-          };
-        },
-        validate: function ($this, value, validator) {
-          if (""+validator.lastValue === ""+value && validator.lastFinished === true) {
-            return validator.lastValid === false;
-          }
-
-          if (validator.lastFinished === true)
-          {
-            validator.lastValue = value;
-            validator.lastValid = true;
-            validator.lastFinished = false;
-            $.ajax({
-              url: validator.url,
-              data: "value=" + value + "&field=" + $this.attr("name"),
-              dataType: "json",
-              success: function (data) {
-                if (""+validator.lastValue === ""+data.value) {
-                  validator.lastValid = !!(data.valid);
-                  if (data.message) {
-                    validator.message = data.message;
-                  }
-                  validator.lastFinished = true;
-                  $this.data("validation" + validator.validatorName + "Message", validator.message);
-                  // Timeout is set to avoid problems with the events being considered 'already fired'
-                  setTimeout(function () {
-                    $this.trigger("change.validation");
-                  }, 1); // doesn't need a long timeout, just long enough for the event bubble to burst
-                }
-              },
-              failure: function () {
-                validator.lastValid = true;
-                validator.message = "ajax call failed";
-                validator.lastFinished = true;
-                $this.data("validation" + validator.validatorName + "Message", validator.message);
-                // Timeout is set to avoid problems with the events being considered 'already fired'
-                setTimeout(function () {
-                  $this.trigger("change.validation");
-                }, 1); // doesn't need a long timeout, just long enough for the event bubble to burst
-              }
+        <!-- All JS plugin Triggers -->
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#lp").hide();
+            $("#lpb").click(function(){
+                $("#lp").toggle();
             });
-          }
-
-          return false;
-
-        }
-      },
-            regex: {
-                name: "regex",
-                init: function ($this, name) {
-                    return {regex: regexFromString($this.data("validation" + name + "Regex"))};
-                },
-                validate: function ($this, value, validator) {
-                    return (!validator.regex.test(value) && ! validator.negative)
-                        || (validator.regex.test(value) && validator.negative);
-                }
-            },
-            required: {
-                name: "required",
-                init: function ($this, name) {
-                    return {};
-                },
-                validate: function ($this, value, validator) {
-                    return !!(value.length === 0  && ! validator.negative)
-                        || !!(value.length > 0 && validator.negative);
-                },
-        blockSubmit: true
-            },
-            match: {
-                name: "match",
-                init: function ($this, name) {
-                    var element = $this.parents("form").first().find("[name=\"" + $this.data("validation" + name + "Match") + "\"]").first();
-                    element.bind("validation.validation", function () {
-                        $this.trigger("change.validation", {submitting: true});
-                    });
-                    return {"element": element};
-                },
-                validate: function ($this, value, validator) {
-                    return (value !== validator.element.val() && ! validator.negative)
-                        || (value === validator.element.val() && validator.negative);
-                },
-        blockSubmit: true
-            },
-            max: {
-                name: "max",
-                init: function ($this, name) {
-                    return {max: $this.data("validation" + name + "Max")};
-                },
-                validate: function ($this, value, validator) {
-                    return (parseFloat(value, 10) > parseFloat(validator.max, 10) && ! validator.negative)
-                        || (parseFloat(value, 10) <= parseFloat(validator.max, 10) && validator.negative);
-                }
-            },
-            min: {
-                name: "min",
-                init: function ($this, name) {
-                    return {min: $this.data("validation" + name + "Min")};
-                },
-                validate: function ($this, value, validator) {
-                    return (parseFloat(value) < parseFloat(validator.min) && ! validator.negative)
-                        || (parseFloat(value) >= parseFloat(validator.min) && validator.negative);
-                }
-            },
-            maxlength: {
-                name: "maxlength",
-                init: function ($this, name) {
-                    return {maxlength: $this.data("validation" + name + "Maxlength")};
-                },
-                validate: function ($this, value, validator) {
-                    return ((value.length > validator.maxlength) && ! validator.negative)
-                        || ((value.length <= validator.maxlength) && validator.negative);
-                }
-            },
-            minlength: {
-                name: "minlength",
-                init: function ($this, name) {
-                    return {minlength: $this.data("validation" + name + "Minlength")};
-                },
-                validate: function ($this, value, validator) {
-                    return ((value.length < validator.minlength) && ! validator.negative)
-                        || ((value.length >= validator.minlength) && validator.negative);
-                }
-            },
-            maxchecked: {
-                name: "maxchecked",
-                init: function ($this, name) {
-                    var elements = $this.parents("form").first().find("[name=\"" + $this.attr("name") + "\"]");
-                    elements.bind("click.validation", function () {
-                        $this.trigger("change.validation", {includeEmpty: true});
-                    });
-                    return {maxchecked: $this.data("validation" + name + "Maxchecked"), elements: elements};
-                },
-                validate: function ($this, value, validator) {
-                    return (validator.elements.filter(":checked").length > validator.maxchecked && ! validator.negative)
-                        || (validator.elements.filter(":checked").length <= validator.maxchecked && validator.negative);
-                },
-        blockSubmit: true
-            },
-            minchecked: {
-                name: "minchecked",
-                init: function ($this, name) {
-                    var elements = $this.parents("form").first().find("[name=\"" + $this.attr("name") + "\"]");
-                    elements.bind("click.validation", function () {
-                        $this.trigger("change.validation", {includeEmpty: true});
-                    });
-                    return {minchecked: $this.data("validation" + name + "Minchecked"), elements: elements};
-                },
-                validate: function ($this, value, validator) {
-                    return (validator.elements.filter(":checked").length < validator.minchecked && ! validator.negative)
-                        || (validator.elements.filter(":checked").length >= validator.minchecked && validator.negative);
-                },
-        blockSubmit: true
-            }
-        },
-        builtInValidators: {
-            email: {
-                name: "Email",
-                type: "shortcut",
-                shortcut: "validemail"
-            },
-            validemail: {
-                name: "Validemail",
-                type: "regex",
-                regex: "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\.[A-Za-z]{2,4}",
-                message: "Not a valid email address<!-- data-validator-validemail-message to override -->"
-            },
-            passwordagain: {
-                name: "Passwordagain",
-                type: "match",
-                match: "password",
-                message: "Does not match the given password<!-- data-validator-paswordagain-message to override -->"
-            },
-            positive: {
-                name: "Positive",
-                type: "shortcut",
-                shortcut: "number,positivenumber"
-            },
-            negative: {
-                name: "Negative",
-                type: "shortcut",
-                shortcut: "number,negativenumber"
-            },
-            number: {
-                name: "Number",
-                type: "regex",
-                regex: "([+-]?\\\d+(\\\.\\\d*)?([eE][+-]?[0-9]+)?)?",
-                message: "Must be a number<!-- data-validator-number-message to override -->"
-            },
-            integer: {
-                name: "Integer",
-                type: "regex",
-                regex: "[+-]?\\\d+",
-                message: "No decimal places allowed<!-- data-validator-integer-message to override -->"
-            },
-            positivenumber: {
-                name: "Positivenumber",
-                type: "min",
-                min: 0,
-                message: "Must be a positive number<!-- data-validator-positivenumber-message to override -->"
-            },
-            negativenumber: {
-                name: "Negativenumber",
-                type: "max",
-                max: 0,
-                message: "Must be a negative number<!-- data-validator-negativenumber-message to override -->"
-            },
-            required: {
-                name: "Required",
-                type: "required",
-                message: "This is required<!-- data-validator-required-message to override -->"
-            },
-            checkone: {
-                name: "Checkone",
-                type: "minchecked",
-                minchecked: 1,
-                message: "Check at least one option<!-- data-validation-checkone-message to override -->"
-            }
-        }
-    };
-
-    var formatValidatorName = function (name) {
-        return name
-            .toLowerCase()
-            .replace(
-                /(^|\s)([a-z])/g ,
-                function(m,p1,p2) {
-                    return p1+p2.toUpperCase();
-                }
-            )
-        ;
-    };
-
-    var getValue = function ($this) {
-        // Extract the value we're talking about
-        var value = $this.val();
-        var type = $this.attr("type");
-        if (type === "checkbox") {
-            value = ($this.is(":checked") ? value : "");
-        }
-        if (type === "radio") {
-            value = ($('input[name="' + $this.attr("name") + '"]:checked').length > 0 ? value : "");
-        }
-        return value;
-    };
-
-  function regexFromString(inputstring) {
-        return new RegExp("^" + inputstring + "$");
-    }
-
-  /**
-   * Thanks to Jason Bunting via StackOverflow.com
-   *
-   * http://stackoverflow.com/questions/359788/how-to-execute-a-javascript-function-when-i-have-its-name-as-a-string#answer-359910
-   * Short link: http://tinyurl.com/executeFunctionByName
-  **/
-  function executeFunctionByName(functionName, context /*, args*/) {
-    var args = Array.prototype.slice.call(arguments).splice(2);
-    var namespaces = functionName.split(".");
-    var func = namespaces.pop();
-    for(var i = 0; i < namespaces.length; i++) {
-      context = context[namespaces[i]];
-    }
-    return context[func].apply(this, args);
-  }
-
-    $.fn.jqBootstrapValidation = function( method ) {
-
-        if ( defaults.methods[method] ) {
-            return defaults.methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
-        } else if ( typeof method === 'object' || ! method ) {
-            return defaults.methods.init.apply( this, arguments );
-        } else {
-        $.error( 'Method ' +  method + ' does not exist on jQuery.jqBootstrapValidation' );
-            return null;
-        }
-
-    };
-
-  $.jqBootstrapValidation = function (options) {
-    $(":input").not("[type=image],[type=submit]").jqBootstrapValidation.apply(this,arguments);
-  };
-
-})( jQuery );
-
-    </script>
-    <script>
-        $(function() {
-
-    $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function($form, event, errors) {
-            // additional error messages or events
-        },
-        submitSuccess: function($form, event) {
-            event.preventDefault(); // prevent default submit behaviour
-            // get values from FORM
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
-            var firstName = name; // For Success/Failure Message
-            // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ').slice(0, -1).join(' ');
-            }
-            $.ajax({
-                url: "././mail/contact_me.php",
-                type: "POST",
-                data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
-                },
-                cache: false,
-                success: function() {
-                    // Success message
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
-                        .append('</div>');
-
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
-                },
-                error: function() {
-                    // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
-                    $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
-                },
-            })
-        },
-        filter: function() {
-            return $(this).is(":visible");
-        },
-    });
-
-    $("a[data-toggle=\"tab\"]").click(function(e) {
-        e.preventDefault();
-        $(this).tab("show");
-    });
-});
+        });
+        </script>
 
 
-/*When clicking on Full hide fail/success boxes */
-$('#name').focus(function() {
-    $('#success').html('');
-});
 
-    </script>
-
-    <!-- Custom Theme JavaScript -->
-    <script>
-        /*!
- * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
-
-// Highlight the top nav as scrolling occurs
-$('body').scrollspy({
-    target: '.navbar-fixed-top'
-})
-
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
-    </script>
-
-</body>
-
-</html>
+    </body>
+    </html>
