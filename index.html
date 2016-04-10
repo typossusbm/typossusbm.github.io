@@ -8,12 +8,11 @@
         
 
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         
-        <!-- Main Style -->
-        <style type="text/css">
-
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+<style type="text/css">
+    
+    @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
@@ -276,21 +275,34 @@ a:hover {
   color: #333;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
 
-        </style>
+#hero-area .btn{margin-top: 15px;}
 
-        <!-- Responsive Style -->
-        <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  .nav > li > a {
+    padding: 12px 8px;
+    line-height: 21px;
+  }
+  .social-links{padding-top: 15px;}
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #hero-area .btn{margin-top: 15px;}
+  .navbar-default{background: rgba(0, 0, 0, 0.8);}
+  .social-links{padding-top: 15px;}
+  .row {padding: 40px 0px;}
+
+}
+
+</style>
+
 
         <!--Icon Fonts-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-
-        <!-- Extras -->
-        <link rel="stylesheet" type="text/css" href="assets/extras/animate.css">
 
         <!-- jQuery Load -->
-        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         
         <!--[if lt IE 9]>
@@ -575,7 +587,7 @@ a:hover {
             <!-- Smooth Scroll -->
                     <!-- Smooth Scroll -->
         <script type="text/javascript">
-            $(function() {
+$(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -591,7 +603,7 @@ a:hover {
 });
         </script>
 
-        <!-- All JS plugin Triggers -->
+      
         <script type="text/javascript">
         $(document).ready(function(){
             $("#lp").hide();
